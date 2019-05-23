@@ -1,0 +1,39 @@
+.loader {
+  position: absolute;
+  height: calc(100vh + 12px);
+  width: calc(100vw - 12px);
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 1000;
+  color: white;
+}
+
+.loader-logo {
+  animation: shake 0.8s linear infinite;
+}
+
+@keyframes shake {
+  25% {
+    transform: rotate(45deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  75% {
+    transform: rotate(-45deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.loader.hide {
+  display: none;
+}
