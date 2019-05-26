@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const process = require('../../config/config');
 
-mongoose.connect('mongodb://127.0.0.1:27017/password-manager', {
+mongoose.connect(process.env.MONGODB_ENV_URL, {
   useNewUrlParser: true,
   useCreateIndex: true
 });

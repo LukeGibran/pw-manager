@@ -29,22 +29,9 @@ app.use(
 
 app.use(userRouter);
 
-// var Users = [];
-
-// app.get('/', (req, res) => {
-//   res.render('login');
-// });
-
-// app.post('/login', (req, res) => {
-//   const newUser = {
-//     email: req.body.email,
-//     password: req.body.password,
-//     name: 'Salman khan'
-//   };
-//   Users.push(newUser);
-//   req.session.user = newUser;
-//   res.redirect('/home');
-// });
+app.get('*', (req, res) => {
+  res.render('error');
+});
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);

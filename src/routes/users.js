@@ -4,7 +4,23 @@ const session = require('../middleware/middleware');
 const User = require('../model/user');
 
 router.get('/', (req, res) => {
+  if (req.session.user) {
+    return res.redirect('/home');
+  }
   res.render('login');
+});
+
+router.post('/login', async (req, res) => {
+  try {
+    const user = await User.authenticate(req.body.email, req.body.password);
+
+    req.session.user = user;
+    res.redirect('/home');
+  } catch (error) {
+    res.status(404).render('login', {
+      error
+    });
+  }
 });
 
 router.get('/signup', (req, res) => {
@@ -32,8 +48,7 @@ router.get('/logout', (req, res) => {
 
 router.get('/home', session, (req, res) => {
   res.render('home', {
-    id: req.session.user.email,
-    name: req.session.user.fname + req.session.user.lname
+    name: `${req.session.user.fname} ${req.session.user.lname}`
   });
 });
 

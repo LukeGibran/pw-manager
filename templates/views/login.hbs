@@ -17,6 +17,9 @@
                 <div class="p-5">
                   <div class="text-center">
                     <h2 class=" text-gray-900 mb-4">Login </h2>
+                    {{#if error}}
+                    <h3>{{error}}</h3>
+                    {{/if}}
                   </div>
                   <form class="user" action="/login" method="POST">
                     <div class="form-group">
@@ -36,7 +39,6 @@
                     <button type="submit" class="btn btn-success btn-user btn-block">
                       Login
                     </button>
-
                   </form>
                   <hr>
                   <div class="text-center">
