@@ -46,10 +46,4 @@ router.get('/logout', (req, res) => {
   res.redirect('/');
 });
 
-router.get('/home', session, (req, res) => {
-  res.render('home', {
-    name: `${req.session.user.fname} ${req.session.user.lname}`
-  });
-});
-
 module.exports = router;

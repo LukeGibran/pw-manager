@@ -47,6 +47,8 @@ pwSchema.pre('save', function(next) {
   if (pw.isModified('password')) {
     pw.password = CryptoJS.AES.encrypt(pw.password, process.env.CIPHER_TEXT);
   }
+
+  next();
 });
 
 const password = mongoose.model('password', pwSchema);

@@ -2,6 +2,7 @@ const path = require('path');
 const hbs = require('hbs');
 require('./db/mongoose');
 const userRouter = require('./routes/users');
+const pwRouter = require('./routes/passwords');
 const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
@@ -28,6 +29,7 @@ app.use(
 );
 
 app.use(userRouter);
+app.use(pwRouter);
 
 app.get('*', (req, res) => {
   res.render('error');
