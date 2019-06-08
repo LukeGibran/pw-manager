@@ -3,7 +3,7 @@ const router = new express.Router();
 const session = require('../middleware/middleware');
 const Password = require('../model/password');
 const CryptoJS = require('crypto-js');
-const process = require('../../config/config');
+// const process = require('../../config/config');
 
 router.get('/home', session, async (req, res) => {
   try {

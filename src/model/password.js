@@ -1,7 +1,7 @@
 const validator = require('validator');
 const mongoose = require('mongoose');
 const CryptoJS = require('crypto-js');
-const process = require('../../config/config');
+// const process = require('../../config/config');
 
 const pwSchema = mongoose.Schema(
   {
