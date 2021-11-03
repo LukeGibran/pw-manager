@@ -21,7 +21,7 @@
     "express-session": "^1.16.1",
     "hbs": "^4.0.4",
     "mongoose": "^5.5.11",
-    "validator": "^10.11.0"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "nodemon": "^1.19.0"
